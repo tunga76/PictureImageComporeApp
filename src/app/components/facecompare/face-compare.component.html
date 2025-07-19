@@ -1,0 +1,15 @@
+<div class="face-compare" [formGroup]="form">
+  <h2>Yüz Karşılaştırma Demo</h2>
+
+  <label for="urlA">Görsel URL #1:</label>
+  <input id="urlA" formControlName="urlA" placeholder="https://..." />
+
+  <label for="urlB">Görsel URL #2:</label>
+  <input id="urlB" formControlName="urlB" placeholder="https://..." />
+
+  <button (click)="compareFaces()" [disabled]="isLoading || form.invalid">
+    {{ isLoading ? 'Karşılaştırılıyor...' : 'Karşılaştır' }}
+  </button>
+
+  <div *ngIf="result" class="result">{{ result }}</div>
+</div>
