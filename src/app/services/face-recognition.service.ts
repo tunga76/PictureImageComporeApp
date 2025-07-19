@@ -16,7 +16,7 @@ export class FaceRecognitionService {
     ]);
   }
 
-  async getDescriptor(base64: string): Promise<Float32Array> {
+  async getDescriptorFromBase64(base64: string): Promise<Float32Array> {
     // const image = await this.base64ToImage(base64);
     const image = await this.loadImageFromUrl(base64);
     const detection = await faceapi.detectSingleFace(image)
